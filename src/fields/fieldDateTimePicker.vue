@@ -1,8 +1,8 @@
 <template lang="jade">
 	.input-group.date
-		input.form-control(type="text", v-model="value", :autocomplete="schema.autocomplete", :disabled="disabled", :placeholder="schema.placeholder", :readonly="schema.readonly", :name="schema.inputName")
+		input.form-control(type="date", v-model="value", :autocomplete="schema.autocomplete", :disabled="disabled", :placeholder="schema.placeholder", :readonly="schema.readonly", :name="schema.inputName")
 		span.input-group-addon
-			span.glyphicon.glyphicon-calendar
+			
 </template>
 
 <script>
