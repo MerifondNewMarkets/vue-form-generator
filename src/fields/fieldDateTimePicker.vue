@@ -1,5 +1,5 @@
 <template lang="jade">
-	.input-group.date
+	.date
 		input.form-control(type="date", v-model="value", :autocomplete="schema.autocomplete", :disabled="disabled", :placeholder="schema.placeholder", :readonly="schema.readonly", :name="schema.inputName")
 </template>
 
@@ -9,7 +9,7 @@
 	import moment from "moment";
 	import { defaults } from "lodash";
 
-	let inputFormat = "YYYY-MM-DD HH:mm:ss";
+	let inputFormat = "YYYY-MM-DDTHH:mm:ss";
 
 	export default {
 		mixins: [ abstractField ],
