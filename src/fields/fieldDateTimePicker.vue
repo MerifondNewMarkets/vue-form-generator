@@ -17,9 +17,9 @@
 		methods: {
 
 			getDateFormat() {
-				//if (this.schema.dateTimePickerOptions && this.schema.dateTimePickerOptions.format) 
-				//	return this.schema.dateTimePickerOptions.format;
-				//else
+				if (this.schema.dateTimePickerOptions && this.schema.dateTimePickerOptions.format) 
+					return this.schema.dateTimePickerOptions.format;
+				else
 					return inputFormat;
 			},
 
