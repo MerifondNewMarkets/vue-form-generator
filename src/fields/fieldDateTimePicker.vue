@@ -9,7 +9,7 @@
 	import moment from "moment";
 	import { defaults } from "lodash";
 
-	let inputFormat = "YYYY-MM-DDTHH:mm:ss";
+	let inputFormat = "YYYY-MM-DD HH:mm:ss"; 
 
 	export default {
 		mixins: [ abstractField ],
@@ -17,9 +17,9 @@
 		methods: {
 
 			getDateFormat() {
-				if (this.schema.dateTimePickerOptions && this.schema.dateTimePickerOptions.format) 
-					return this.schema.dateTimePickerOptions.format;
-				else
+				//if (this.schema.dateTimePickerOptions && this.schema.dateTimePickerOptions.format) 
+				//	return this.schema.dateTimePickerOptions.format;
+				//else
 					return inputFormat;
 			},
 
@@ -38,7 +38,6 @@
 					else
 						value = m.toDate().valueOf();
 				}
-
 				return value;
 			}
 
