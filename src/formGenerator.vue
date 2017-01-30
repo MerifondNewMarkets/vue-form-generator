@@ -3,12 +3,12 @@ div
 	fieldset.vue-form-generator(v-if='schema != null')
 		template(v-for='field in fields')
 			.form-group(v-if='fieldVisible(field)', :class='getFieldRowClasses(field)')
-				label
+				label(:class='getLabelClasses(field)')
 					| {{ field.label }}
 					span.help(v-if='field.help')
 						i.icon
 						.helpText(v-html='field.help')
-				.field-wrap
+				.field-wrap(:class='getFielWrapClasses(field)')
 					component(:is='getFieldType(field)', :disabled='fieldDisabled(field)', :model='model', :schema.sync='field', @model-updated='modelUpdated')
 					.buttons(v-if='buttonVisibility(field)')
 						button(v-for='btn in field.buttons', @click='btn.onclick(model, field)', :class='btn.classes') {{ btn.label }}
@@ -128,6 +128,34 @@ div
 				}
 				else if (isString(field.styleClasses)) {
 					baseClasses[field.styleClasses] = true;
+				}
+
+				baseClasses["field-" + field.type] = true;
+
+				return baseClasses;
+			},
+			getLabelClasses(field) {
+				let baseClasses = {};
+
+				if (isArray(field.lableClasses)) {
+					each(field.lableClasses, (c) => baseClasses[c] = true);
+				}
+				else if (isString(field.lableClasses)) {
+					baseClasses[field.lableClasses] = true;
+				}
+
+				baseClasses["field-" + field.type] = true;
+
+				return baseClasses;
+			},
+			getFielWrapClasses(field) {
+				let baseClasses = {};
+
+				if (isArray(field.fieldwrapClasses)) {
+					each(field.fieldwrapClasses, (c) => baseClasses[c] = true);
+				}
+				else if (isString(field.fieldwrapClasses)) {
+					baseClasses[field.fieldwrapClasses] = true;
 				}
 
 				baseClasses["field-" + field.type] = true;

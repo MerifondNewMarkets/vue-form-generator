@@ -1,6 +1,6 @@
 {
   "name": "vue-form-generator-mnm",
-  "version": "2.0.1-beta4",
+  "version": "2.0.2-beta4",
   "description": "A schema-based form generator component for Vue.js",
   "homepage": "https://github.com/MerifondNewMarkets/vue-form-generator",
   "main": "dist/vue-form-generator.js",
